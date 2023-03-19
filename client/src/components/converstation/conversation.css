@@ -1,0 +1,27 @@
+.conversation{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.conversation:hover {
+    background-color: rgb(248, 245, 245);
+}
+.conversationImg{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+.conversationName {
+    font-weight: 500;
+}
+.typingText {
+    color: green;
+    margin-top: 2px;
+    font-style: italic;
+    font-size: smaller;
+    width: 100%;
+}
