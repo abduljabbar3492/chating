@@ -50,7 +50,7 @@ services:
 
     # the port that we want to publish for frontend
     ports:
-      - "80:80"
+      - "3000:3000"
     # add bind mount volume to keep have updated source code
     # volumes:
     #   - ./client/src:/app/src
