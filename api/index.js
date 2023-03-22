@@ -18,8 +18,9 @@ dotenv.config();
 mongoose.connect(
   process.env.MONGO_URL,
   { useNewUrlParser: true, useUnifiedTopology: true },
-  () => {
-    console.log("Connected to MongoDB");
+  (err) => {
+    if (err) throw err;
+    else console.log("Connected to MongoDB");
   }
 );
 app.use("/images", express.static(path.join(__dirname, "public/images")));
