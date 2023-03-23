@@ -22,7 +22,9 @@ export default function Messenger() {
   useEffect(() => {
     const getConversations = async () => {
       try {
-        const res = await axios.get("/conversations/" + user._id);
+        const res = await axios.get(
+          process.env.REACT_APP_API_URI + "/conversations/" + user._id
+        );
         setConversations(res.data);
       } catch (error) {
         console.log(error);
@@ -34,7 +36,9 @@ export default function Messenger() {
   useEffect(() => {
     const getMessages = async () => {
       try {
-        const res = await axios.get("/messages/" + currentChat?._id);
+        const res = await axios.get(
+          process.env.REACT_APP_API_URI + "/messages/" + currentChat?._id
+        );
         setMessages(res.data);
       } catch (error) {
         console.log(error);
@@ -59,7 +63,10 @@ export default function Messenger() {
       text: newMessage,
     });
     try {
-      const res = await axios.post("/messages", message);
+      const res = await axios.post(
+        process.env.REACT_APP_API_URI + "/messages",
+        message
+      );
       setMessages([...messages, res.data]);
       setNewMessage("");
     } catch (error) {

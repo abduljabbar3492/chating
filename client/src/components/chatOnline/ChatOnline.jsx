@@ -13,7 +13,9 @@ export default function ChatOnline({
     const getFriends = async () => {
       try {
         console.log("currentUserId", currentUserId);
-        const res = await axios.get("/users/friends/" + currentUserId);
+        const res = await axios.get(
+          process.env.REACT_APP_API_URI + "/users/friends/" + currentUserId
+        );
         console.log("friends khan", res);
         setFriends(res.data);
       } catch (error) {
@@ -29,7 +31,8 @@ export default function ChatOnline({
   const clickHandler = async (user) => {
     try {
       const res = await axios.get(
-        `/conversations/find/${currentUserId}/${user._id}`
+        process.env.REACT_APP_API_URI +
+          `/conversations/find/${currentUserId}/${user._id}`
       );
       setCurrentChat(res.data);
     } catch (error) {

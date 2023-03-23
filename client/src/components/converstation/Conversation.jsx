@@ -9,7 +9,9 @@ export default function Conversation({ conversation, currentUser, typing }) {
     const friendId = conversation.members.find((x) => x !== currentUser._id);
     const getUser = async () => {
       try {
-        const res = await axios.get("/users?userId=" + friendId);
+        const res = await axios.get(
+          process.env.REACT_APP_API_URI + "/users?userId=" + friendId
+        );
         setUser(res.data);
       } catch (error) {
         console.log(error);

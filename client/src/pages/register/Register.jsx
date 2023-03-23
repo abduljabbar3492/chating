@@ -21,7 +21,10 @@ export default function Register() {
         password: password.current.value,
       };
       try {
-        await axios.post("/auth/register", user);
+        await axios.post(
+          process.env.REACT_APP_API_URI + "/auth/register",
+          user
+        );
         history.push("/login");
       } catch (err) {
         console.log(err);
