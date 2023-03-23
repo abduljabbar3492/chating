@@ -12,6 +12,7 @@ const conversationRoute = require("./routes/converstations");
 const messageRoute = require("./routes/messages");
 const router = express.Router();
 const path = require("path");
+const cors = require("cors")
 
 dotenv.config();
 
@@ -28,6 +29,7 @@ app.use("/images", express.static(path.join(__dirname, "public/images")));
 //middleware
 app.use(express.json());
 app.use(helmet());
+app.use(cors());
 app.use(morgan("common"));
 
 const storage = multer.diskStorage({
