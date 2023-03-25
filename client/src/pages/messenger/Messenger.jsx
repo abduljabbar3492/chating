@@ -81,7 +81,7 @@ export default function Messenger() {
   //sockets
 
   useEffect(() => {
-    socket.current = io("ws://socket");
+    socket.current = io({ path: "/socket.io" });
     socket.current.on("getMessage", (data) => {
       setArrivalMessage({
         senderId: data.senderId,
