@@ -51,6 +51,8 @@ services:
     # the port that we want to publish for frontend
     ports:
       - "3000:3000"
+    environment:
+      - REACT_APP_API_URI=http://65.2.122.131:8800/api=value
     # add bind mount volume to keep have updated source code
     # volumes:
     #   - ./client/src:/app/src
