@@ -81,9 +81,9 @@ export default function Messenger() {
   //sockets
 
   useEffect(() => {
-    // socket.current = io({ path: "http://65.2.122.131/socket.io" });
+    socket.current = io({ path: "http://65.2.122.131:8000/socket.io" });
     console.log("Socket conncetion use effect");
-    socket.current = io("http://65.2.122.131:8000/socket.io");
+    // socket.current = io("http://65.2.122.131:8000/socket.io");
     socket.current.on("getMessage", (data) => {
       setArrivalMessage({
         senderId: data.senderId,
